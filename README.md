@@ -1,38 +1,32 @@
-# arduino-odroid
+# ODUINO (ODROID to run Arduino)
 
-Arduino core for the ODROID
+## About
+ODUINO is a project to develop and run Arduino sketch on ODROID boards. With ODUINO, you can write a code with Arduino IDE on an ODROID board and run directly without any other hardware.
+- ODROID provides relatively very powerful computing power than generic Arduino boards, even enough to run desktop environment.
+- ODROID provides external pin headers that can be configurable as GPIO, I2C, SPI, UART, PWM and ADC and these are the very common hardware features on Arduino boards.
+- Arduino provides very powerful frameworks and is easy to learn computer programming.
 
+## Supported boards
+These are the target ODROID boards that ODUINO can run, the hardware features supported by Arduino could be not compatible.
+- [ODROID-C1](https://wiki.odroid.com/odroid-c1/odroid-c1)
+- [ODROID-XU4](https://wiki.odroid.com/odroid-xu4/odroid-xu4)
+- [ODROID-C2](https://wiki.odroid.com/odroid-c2/odroid-c2)
+- [ODROID-N2](https://wiki.odroid.com/odroid-n2/odroid-n2)
 ## Installation
-
-- Install latest Arduino IDE for the Linux ARM from [www.arduino.cc/Main/Software](https://www.arduino.cc/en/Main/Software?target=_blank)
-- Installation Guide : [www.arduino.cc/Guide/Linux](https://www.arduino.cc/en/Guide/Linux?target=_blank)
-  - ODROID C1/XU4 : ARM 32bit
-  - ODROID C2/N2 : ARM 64bit
-- Open Terminal and execute   the following command (copy and paste the following command after $):
-
+- The installation instruction is quite simple, just run the commands below. This commands will install Arduino IDE as well as the modules to run Arduino sketch.
 ```bash
-$ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+$ sudo apt update
+$ sudo apt install oduino
 ```
+- Currently, the installation package for Debian or Ubuntu are providing.
 
+## Trouble shooting
+### ODROID boards are not listed
+- If you already have install Arduino IDE and it was running before installing the package **oduino**, Arduino IDE must be restarted.
+- If you have installed Arduino already by following the instruction on Arduino page, [Installing latest Arduino IDE for the Linux ARM](https://www.arduino.cc/en/Main/Software?target=_blank), you must copy or link the hardware files for ODROID to the directory of Arduino IDE already installed. For example, if your previous Arduino is installed to **$HOME/Arduino**,
 ```bash
-$ sudo apt install -y git &&\
-  git clone https://github.com/hhk7734/arduino-odroid.git ~/Arduino/hardware/hardkernel/odroid
+$ ln -s /usr/share/arduino/hardware/odroid $HOME/Arduino/hardware/
 ```
-
-- If you already opened the Arduino IDE, Close and reopen the Arduino IDE.
-
-- If you write and compile the code for the your Odroid on the desktop, additionally install a cross compiler.(copy and paste the following command after $)
-
-```bash
-$ echo "for the Odroid c1/xu4" &&\
-  sudo apt install -y gcc-arm-linux-gnueabihf &&\
-  sudo apt install -y g++-arm-linux-gnueabihf
-
-$ echo "for the Odroid c2/n2" &&\
-  sudo apt install -y gcc-aarch64-linux-gnu &&\
-  sudo apt install -y g++-aarch64-linux-gnu
-```
-
 ## setup
 
 ### select board
