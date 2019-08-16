@@ -1,5 +1,4 @@
 README.md		/usr/share/arduino/hardware/hardkernel/odroid/
-boards.txt		/usr/share/arduino/hardware/hardkernel/odroid/
 platform.txt		/usr/share/arduino/hardware/hardkernel/odroid/
 programmers.txt		/usr/share/arduino/hardware/hardkernel/odroid/
 cores			/usr/share/arduino/hardware/hardkernel/odroid/

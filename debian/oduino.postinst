@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+BOARDFILE=/usr/share/arduino/hardware/hardkernel/odroid/boards.txt
+BOARD=`cat /proc/device-tree/model`
+
+case ${BOARD} in
+        "Hardkernel ODROID-N2")
+                PREFIX="odroid_n2"
+                BOARDTYPE="C1"
+                ;;
+
+        *)
+                echo "Unknown board type"
+                exit 1
+                ;;
+esac
+
+echo "${PREFIX}.name=${BOARD}" > ${BOARDFILE}
+echo "${PREFIX}.build.core=odroid" >> ${BOARDFILE}
+echo "${PREFIX}.build.board=${BOARD}" >> ${BOARDFILE}
+echo "${PREFIX}.upload.tool=bash" >> ${BOARDFILE}
+echo "${PREFIX}.compiler.cross_compile=gcc" >> ${BOARDFILE}
