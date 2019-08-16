@@ -10,7 +10,7 @@ Homepage: https://github.com/hhk7734
 
 Package: oduino
 Architecture: armhf arm64
-Depends: build-essential
+Depends: build-essential, odroid-wiringpi
 Description: Arduino device package for ODROID SBC
  The 'oduino' is the package to install the device files
  to run Arduino and run on ODROID SBCs, currently supporting
