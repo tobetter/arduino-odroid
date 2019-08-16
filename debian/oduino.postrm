@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+rm -f /usr/share/arduino/hardware/hardkernel/odroid/boards.txt
