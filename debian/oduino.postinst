@@ -6,11 +6,15 @@ BOARDFILE=/usr/share/arduino/hardware/hardkernel/odroid/boards.txt
 BOARD=`cat /proc/device-tree/model`
 
 case ${BOARD} in
+	"Hardkernel Odroid XU4")
+                PREFIX="odroid_xu4"
+		;;
+	"ODROID-C2")
+                PREFIX="odroid_c2"
+		;;
         "Hardkernel ODROID-N2")
                 PREFIX="odroid_n2"
-                BOARDTYPE="C1"
                 ;;
-
         *)
                 echo "Unknown board type"
                 exit 1
