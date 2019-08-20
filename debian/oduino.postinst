@@ -8,12 +8,15 @@ BOARD=`cat /proc/device-tree/model`
 case ${BOARD} in
 	"Hardkernel Odroid XU4")
                 PREFIX="odroid_xu4"
+		BUILD_BOARD="ODROID_XU4"
 		;;
 	"ODROID-C2")
                 PREFIX="odroid_c2"
+		BUILD_BOARD="ODROID_C2"
 		;;
         "Hardkernel ODROID-N2")
                 PREFIX="odroid_n2"
+		BUILD_BOARD="ODROID_N2"
                 ;;
         *)
                 echo "Unknown board type"
@@ -23,6 +26,6 @@ esac
 
 echo "${PREFIX}.name=${BOARD}" > ${BOARDFILE}
 echo "${PREFIX}.build.core=odroid" >> ${BOARDFILE}
-echo "${PREFIX}.build.board=${BOARD}" >> ${BOARDFILE}
+echo "${PREFIX}.build.board=${BUILD_BOARD}" >> ${BOARDFILE}
 echo "${PREFIX}.upload.tool=bash" >> ${BOARDFILE}
 #echo "${PREFIX}.compiler.cross_compile=gcc" >> ${BOARDFILE}
