@@ -3,7 +3,7 @@
 set -e
 
 BOARDFILE=/usr/share/arduino/hardware/hardkernel/odroid/boards.txt
-BOARD=`cat /proc/device-tree/model`
+[ "x${BOARD}" = "x" ] && BOARD=`cat /proc/device-tree/model`
 
 case ${BOARD} in
 	"Hardkernel Odroid XU4")
