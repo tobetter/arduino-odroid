@@ -5,3 +5,4 @@ cores			/usr/share/arduino/hardware/hardkernel/odroid/
 libraries		/usr/share/arduino/hardware/hardkernel/odroid/
 tools			/usr/share/arduino/hardware/hardkernel/odroid/
 image			/usr/share/arduino/hardware/hardkernel/odroid/
+files			/usr/share/arduino/hardware/hardkernel/odroid/
